@@ -1,0 +1,25 @@
+{% extends 'home/base.html' %}
+{% block title %}<title>Profile</title>{% endblock title %}
+{% block base_style %}
+<h1>User Profile</h1>
+<p>
+    <li>
+        {% if request.user.userextension.avatar %}
+        <img src={{request.user.userextension.avatar.url}} alt="">
+        {% else %}
+        Image Not Found
+        {% endif %}
+    </li>
+</p>
+<p>
+    <li>Name: {{request.user.first_name}}</li>
+    <li>Last Name: {{request.user.last_name}}</li>
+    <li>Email: {{request.user.email}}</li>
+</p>
+<p>
+    <a href={% url 'edit_profile' %}>Edit Profile</a>
+</p>
+<p>
+    <a href={% url 'change_password' %}>Change Password</a>
+</p>
+{% endblock base_style %}
