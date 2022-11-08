@@ -6,14 +6,14 @@
     
     <form action={% url 'view_cars' %} method="GET">        
         {{form}}
-        <input type="submit" value="Search Car">
+        <input type="submit" value="Search Car"><label for="Search Car">Search only by fabricant</label>
     </form>
 
     <p>
-                {% if object_list %}
-                    {% for car in object_list %}
+                {% if cars %}
+                    {% for car in cars %}
                         <li>
-                            {{car}}
+                            <b>Fabricant:</b> {{car.car_fabricant}} <b>Model:</b> {{car.car_model}} <b>Color:</b> {{car.car_color}}</p>
                             <p> 
                                 <a  href={% url 'edit_car' car.id %}>Edit</a>
                                 <a  href={% url 'delete_car' car.id %}>Delete</a>
