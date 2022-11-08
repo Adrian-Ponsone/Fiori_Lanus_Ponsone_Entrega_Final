@@ -1,0 +1,27 @@
+{% extends 'home/base.html' %}
+{% block title %}<title>View Cars</title>{% endblock title %}
+{% block base_style %}
+    
+    <h1>View Cars</h1>
+    
+    <form action={% url 'view_cars' %} method="GET">        
+        {{form}}
+        <input type="submit" value="Search Car">
+    </form>
+
+    <p>
+                {% if object_list %}
+                    {% for car in object_list %}
+                        <li>
+                            {{car}}
+                            <p> 
+                                <a  href={% url 'edit_car' car.id %}>Edit</a>
+                                <a  href={% url 'delete_car' car.id %}>Delete</a>
+                            </p>
+                        </li>
+                    {% endfor %}
+                {% else %}
+                    <p>No cars created</p>
+                {% endif %}
+    </p>
+{% endblock base_style %}

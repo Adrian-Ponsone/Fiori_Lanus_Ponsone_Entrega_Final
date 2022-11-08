@@ -1,0 +1,14 @@
+{% extends 'home/base.html' %}
+{% block title %}<title>Delete Car</title>{% endblock title %}
+{% block base_style %}
+    <form action={% url 'delete_car' car.id %} method="POST">
+        {% csrf_token %}
+        
+        <p>
+            Do you want to delete {{car}}?
+        </p>
+    
+        <input type="submit" value="Confirm">
+
+    </form>
+{% endblock base_style %}

@@ -1,0 +1,14 @@
+{% extends 'home/base.html' %}
+{% block title %}<title>Create Car</title>{% endblock title %}
+{% block base_style %}
+    <form action={% url 'create_car' %} method="POST">
+        {% csrf_token %}
+        
+        <table>
+            {{form}}
+        </table>
+    
+        <input type="submit" value="Create">
+
+    </form>
+{% endblock base_style %}

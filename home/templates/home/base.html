@@ -28,18 +28,16 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto py-4 py-lg-0">
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href={% url 'index' %}>Home</a></li>
-                        {% comment %} <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href={% url 'user_creation' %}>Register</a></li> {% endcomment %}
-                        {% comment %} <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href={% url 'view_users' %}>Users DB</a></li> {% endcomment %}
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href={% url 'about-us' %}>About us</a></li>
-                        {% comment %} <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href={% url 'ver_mascotas' %}>Ver Mascotas</a></li> {% endcomment %}
-                        {% comment %} <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href={% url 'crear_mascota' %}>Crear Mascota</a></li> {% endcomment %}
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href={% url 'view_cars' %}>View Cars</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href={% url 'create_car' %}>Create Car</a></li>
                         {% if request.user.is_authenticated %}
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href={% url 'profile' %}>{{request.user.username}}</a></li>
                             <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href={% url 'logout' %}>Logout</a></li>
                         {% else %}    
                             <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href={% url 'login' %}>Login</a></li>   
                             <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href={% url 'register' %}>Register</a></li>
-                            {% endif %}
+                        {% endif %}
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href={% url 'about-us' %}>About us</a></li>
                     </ul>
                 </div>
             </div>
