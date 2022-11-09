@@ -49,6 +49,10 @@ delete_car.html: to delete a car
 7.Open the http link with (ctrl + click)
 
 8.enjoy the blog!!
+
+Superuser
+user: admin
+pass: 123456
 --------------------------------------------------------------------------------------------------------------
 
 by Agustín Fiori, Adrian Ponsone and Agustin Lanus

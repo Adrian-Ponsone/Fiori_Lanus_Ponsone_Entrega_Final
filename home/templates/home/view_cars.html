@@ -7,14 +7,14 @@
     <form action={% url 'view_cars' %} method="GET">
         {{form.media}}        
         {{form}}
-        <input type="submit" value="Search Car"><label for="Search Car">Search only by fabricant</label>
+        <input type="submit" value="Search Car"><label for="Search Car">Search by fabricant</label>
     </form>
 
     <p>
                 {% if cars %}
                     {% for car in cars %}
                         <li>
-                            <b>Fabricant:</b> {{car.car_fabricant}} <b>Model:</b> {{car.car_model}} <b>Color:</b> {{car.car_color}}</p>
+                            <b>Fabricant:</b> {{car.car_fabricant}} <b>Model:</b> {{car.car_model}} <b>Color:</b> {{car.car_color}} <b>Posted by:</b> {{posted_by}}</p>
                             <p> 
                                 <a  href={% url 'car_details' car.id %}>{{car}}</a>
                                 <a  href={% url 'edit_car' car.id %}>Edit</a>

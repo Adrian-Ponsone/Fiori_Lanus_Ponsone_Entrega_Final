@@ -9,7 +9,6 @@ from django.views.generic.edit import UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 
-
 def index_bootstrap(request):
     return render(request, 'home/index.html') 
 
@@ -42,6 +41,7 @@ def create_car(request):
             car_year = data['car_year']
             fabrication_date =  data.get('fabrication_date')
             car_description = data['car_description']
+            
             if fabrication_date == None:
                 fabrication_date = datetime.now()
             
@@ -52,6 +52,7 @@ def create_car(request):
                       car_year = car_year,
                       fabrication_date = fabrication_date,
                       car_description = car_description)
+            
             car.save()
             return redirect('view_cars')
     
