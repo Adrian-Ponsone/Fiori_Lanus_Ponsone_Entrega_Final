@@ -4,7 +4,7 @@ from home.models import Car
 from home.forms import SearchCarForm, CarForm
 from django.shortcuts import render, redirect
 from datetime import datetime
-# from django.views.generic import ListView
+from django.views.generic import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
@@ -45,6 +45,7 @@ def create_car(request):
             car_color = data['car_color']
             car_year = data['car_year']
             fabrication_date =  data.get('fabrication_date')
+            car_description = data['car_description']
             if fabrication_date == None:
                 fabrication_date = datetime.now()
             
@@ -53,7 +54,8 @@ def create_car(request):
                       car_type = car_type,
                       car_color = car_color,
                       car_year = car_year,
-                      fabrication_date = fabrication_date)
+                      fabrication_date = fabrication_date,
+                      car_description = car_description)
             car.save()
             return redirect('view_cars')
     
@@ -80,10 +82,14 @@ class EditCar(LoginRequiredMixin,UpdateView):
               'car_type',
               'car_color',
               'car_year',
-              'fabrication_date']
+              'fabrication_date',
+              'car_description']
 
 class DeleteCar(LoginRequiredMixin, DeleteView):
     model = Car
     success_url = '/cars/'
     template_name = 'home/delete_car.html'
     
+class CarDetails(DetailView):
+    model = Car
+    template_name = 'home/car_details.html'

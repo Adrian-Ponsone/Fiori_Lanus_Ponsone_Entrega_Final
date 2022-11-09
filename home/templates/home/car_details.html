@@ -1,0 +1,16 @@
+{% extends 'home/base.html' %}
+{% block title %}<title>Car Details</title>{% endblock title %}
+{% block base_style %}
+    
+    <h1>Car Details</h1>
+    
+    <p>
+        <li>Fabricant: {{car.car_fabricant}}</li>
+        <li>Model: {{car.car_model}}</li>
+        <li>Type: {{car.car_type}}</li>
+        <li>Color: {{car.car_color}}</li>
+        <li>Year: {{car.car_year}}</li>
+        <li>Fabrication Date: {{car.fabrication_date}}</li>
+        <li>Description: {{car.car_description | safe}}</li>
+    </p>
+{% endblock base_style %}

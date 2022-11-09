@@ -4,7 +4,8 @@
     
     <h1>View Cars</h1>
     
-    <form action={% url 'view_cars' %} method="GET">        
+    <form action={% url 'view_cars' %} method="GET">
+        {{form.media}}        
         {{form}}
         <input type="submit" value="Search Car"><label for="Search Car">Search only by fabricant</label>
     </form>
@@ -15,6 +16,7 @@
                         <li>
                             <b>Fabricant:</b> {{car.car_fabricant}} <b>Model:</b> {{car.car_model}} <b>Color:</b> {{car.car_color}}</p>
                             <p> 
+                                <a  href={% url 'car_details' car.id %}>{{car}}</a>
                                 <a  href={% url 'edit_car' car.id %}>Edit</a>
                                 <a  href={% url 'delete_car' car.id %}>Delete</a>
                             </p>
