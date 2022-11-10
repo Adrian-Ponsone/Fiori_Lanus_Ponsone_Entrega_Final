@@ -1,7 +1,7 @@
 {% extends 'home/base.html' %}
 {% block title %}<title>Edit Car</title>{% endblock title %}
 {% block base_style %}
-    <form action={% url 'edit_car' car.id %} method="POST">
+    <form action={% url 'edit_car' car.id %} method="POST" enctype='multipart/form-data'>
         {% csrf_token %}
         
         <table>

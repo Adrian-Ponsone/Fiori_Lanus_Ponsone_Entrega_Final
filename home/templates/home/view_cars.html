@@ -4,7 +4,7 @@
     
     <h1>View Cars</h1>
     
-    <form action={% url 'view_cars' %} method="GET">
+    <form action={% url 'view_cars' %} method="GET" enctype='multipart/form-data'>
         {{form.media}}        
         {{form}}
         <input type="submit" value="Search Car"><label for="Search Car">Search by fabricant</label>
@@ -14,12 +14,10 @@
                 {% if cars %}
                     {% for car in cars %}
                         <li>
-                            <b>Fabricant:</b> {{car.car_fabricant}} <b>Model:</b> {{car.car_model}} <b>Color:</b> {{car.car_color}} <b>Posted by:</b> {{posted_by}}</p>
-                            <p> 
+                            {% comment %} <b>Fabricant:</b> {{car.car_fabricant}} <b>Model:</b> {{car.car_model}} <b>Color:</b> {{car.car_color}} <b>Posted by:</b> {{car.car_user}}</p> {% endcomment %}
                                 <a  href={% url 'car_details' car.id %}>{{car}}</a>
                                 <a  href={% url 'edit_car' car.id %}>Edit</a>
                                 <a  href={% url 'delete_car' car.id %}>Delete</a>
-                            </p>
                         </li>
                     {% endfor %}
                 {% else %}

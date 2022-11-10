@@ -3,8 +3,20 @@
 {% block base_style %}
     
     <h1>Car Details</h1>
+<form enctype='multipart/form-data'>   
+    {{form.media}} 
+    <p>
+        <li>
+            {% if car.car_image %}
+            <img src={{car.car_image.url}} alt="">
+            {% else %}
+            Image Not Found
+            {% endif %}
+        </li>
+    </p>
     
     <p>
+        <li>Posted by: {{car.posted_by}}</li>
         <li>Fabricant: {{car.car_fabricant}}</li>
         <li>Model: {{car.car_model}}</li>
         <li>Type: {{car.car_type}}</li>
@@ -13,5 +25,5 @@
         <li>Fabrication Date: {{car.fabrication_date}}</li>
         <li>Description: {{car.car_description | safe}}</li>
     </p>
-    
+</form>
 {% endblock base_style %}
