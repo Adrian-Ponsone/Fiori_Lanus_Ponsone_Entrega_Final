@@ -6,6 +6,8 @@ Django==4.1.3
 Pillow==9.3.0
 sqlparse==0.4.3
 tzdata==2022.6
+django-ckeditor==6.5.1
+django-js-asset==2.0.0
 
 in this code you will find:
 ---------------------------------------------------------------------------------------------------------
