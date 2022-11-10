@@ -50,7 +50,7 @@ def edit_profile(request):
             request.user.last_name = new_data['last_name']
             request.user.email = new_data['email']
             request.user.userextension.avatar = new_data['avatar']
-            
+            request.user.userextension.user_description = new_data['user_description']
             request.user.userextension.save()
             request.user.save()
             return redirect('profile')
@@ -59,7 +59,8 @@ def edit_profile(request):
         form = FormProfileEdit(initial={'first_name' : request.user.first_name,
                                         'last_name' : request.user.last_name,
                                         'email' : request.user.email,
-                                        'avatar' : request.user.userextension.avatar})
+                                        'avatar' : request.user.userextension.avatar,
+                                        'user_description' : request.user.userextension.user_description})
     
     return render(request, 'accounts/edit_profile.html', {'form' : form})
 
