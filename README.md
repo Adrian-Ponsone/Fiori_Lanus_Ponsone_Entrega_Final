@@ -42,13 +42,15 @@ delete_car.html: to delete a car
 
 4.Install pillow with "python -m pip install Pillow"
 
-5.Make the migrations in the cmd with "py manage.py migrate" for create the database
+5.Install ckeditor with "pip install django-ckeditor"
 
-6.Start the development server with "py manage.py runserver"
+6.Make the migrations in the cmd with "py manage.py migrate" for create the database
 
-7.Open the http link with (ctrl + click)
+7.Start the development server with "py manage.py runserver"
 
-8.enjoy the blog!!
+8.Open the http link with (ctrl + click)
+
+9.enjoy the blog!!
 
 Superuser
 user: admin

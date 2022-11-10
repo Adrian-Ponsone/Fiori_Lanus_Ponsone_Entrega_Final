@@ -52,14 +52,14 @@ def create_car(request):
                 fabrication_date = datetime.now()
             
             car = Car(car_fabricant = car_fabricant, 
-                      car_model = car_model, 
-                      car_type = car_type,
-                      car_color = car_color,
-                      car_year = car_year,
-                      fabrication_date = fabrication_date,
-                      car_description = car_description,
-                      posted_by = posted_by,
-                      car_image = car_image)
+                    car_model = car_model, 
+                    car_type = car_type,
+                    car_color = car_color,
+                    car_year = car_year,
+                    fabrication_date = fabrication_date,
+                    car_description = car_description,
+                    posted_by = posted_by,
+                    car_image = car_image)
             
             car.save()
             return redirect('view_cars')
@@ -72,14 +72,14 @@ class EditCar(LoginRequiredMixin,UpdateView):
     success_url = '/cars/'
     template_name = 'home/edit_car.html'
     fields = ['car_fabricant',
-              'car_model',
-              'car_type',
-              'car_color',
-              'car_year',
-              'fabrication_date',
-              'car_description',
-              'posted_by',
-              'car_image']
+            'car_model',
+            'car_type',
+            'car_color',
+            'car_year',
+            'fabrication_date',
+            'car_description',
+            'posted_by',
+            'car_image']
 
 class DeleteCar(LoginRequiredMixin, DeleteView):
     model = Car
