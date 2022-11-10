@@ -1,7 +1,6 @@
 from unicodedata import name
 from django.shortcuts import render, redirect
 from home.models import Car
-# from home.models import Car, CarUser
 from home.forms import SearchCarForm, CarForm
 from django.shortcuts import render, redirect
 from datetime import datetime
@@ -9,7 +8,6 @@ from django.views.generic import DetailView
 from django.views.generic.edit import UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
-# from django.contrib.auth.models import User
 
 def index_bootstrap(request):
     return render(request, 'home/index.html') 
@@ -30,9 +28,7 @@ def view_cars(request):
 
 @login_required
 def create_car(request):
-    if request.method == 'POST':
-        
-        # users = CarUser.objects.filter(user=request.user.id) 
+    if request.method == 'POST': 
         
         form =CarForm(request.POST, request.FILES)
         
@@ -45,7 +41,6 @@ def create_car(request):
             car_year = data['car_year']
             fabrication_date =  data.get('fabrication_date')
             car_description = data['car_description']
-            posted_by = data['posted_by']
             car_image = data['car_image']
             
             if fabrication_date == None:
@@ -58,7 +53,7 @@ def create_car(request):
                     car_year = car_year,
                     fabrication_date = fabrication_date,
                     car_description = car_description,
-                    posted_by = posted_by,
+                    posted_by = request.user.username,
                     car_image = car_image)
             
             car.save()
