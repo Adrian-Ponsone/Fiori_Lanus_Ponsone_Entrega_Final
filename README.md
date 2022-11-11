@@ -36,27 +36,30 @@ delete_car.html: to delete a car
 ####¿how to make the code work correctly?####
 
 ---------------------------------------------------------------------------------------------------------------
-1.Clone the repository
+1.Clone the repository using "git clone link_github".   
 
-2.Once opened, create the virtual enviroment and activate it with "venv/Scripts/activate"
+2.Once opened, create the virtual enviroment and activate it with ". virtual_enviroment_name/Scripts/activate".
 
-3.Install Django with "pip install django" at the cmd and verify that is working correctly
+3.Once activated, install Django with "pip install django" at the terminal and verify that is working correctly.
 
-4.Install pillow with "python -m pip install Pillow"
+4.Install pillow with "python -m pip install Pillow".
 
-5.Install ckeditor with "pip install django-ckeditor"
+5.Install ckeditor with "pip install django-ckeditor".
 
-6.Make the migrations in the cmd with "py manage.py migrate" for create the database
+6.Make the migrations in the terminal to create the database:
+    For make the migrations use:    py manage.py makemigrations
+                                    py manage.py migrate
 
-7.Start the development server with "py manage.py runserver"
+7.Run the project with "py manage.py runserver".
 
-8.Open the http link with (ctrl + click)
+8.Open the http link with (ctrl + click).
 
-9.enjoy the blog!!
+9.First you will have to register with an user name and a password, if you don't signup you wouldn't able to post, edit or eliminate
+  the cars previusly created but if you aren't log you still can see the list car history created to the moment.
 
-Superuser
-user: admin
-pass: 123456
+10.To use the section of admin you will have to create a superuser with py manage.py created superuser and login as superuser.
+
+11.Finally, enjoy the blog!!.
 --------------------------------------------------------------------------------------------------------------
 
 by Agustín Fiori, Adrian Ponsone and Agustin Lanus
