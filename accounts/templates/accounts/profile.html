@@ -15,6 +15,7 @@
     <li>Name: {{request.user.first_name}}</li>
     <li>Last Name: {{request.user.last_name}}</li>
     <li>Email: {{request.user.email}}</li>
+    <li><a href="{{request.user.userextension.user_link}}">Link to my personal web site</a></li>
     <li>Description: {{request.user.userextension.user_description | safe}}</li>
 </p>
 <p>

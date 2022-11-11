@@ -25,3 +25,4 @@ class FormProfileEdit(forms.Form):
     email = forms.CharField()
     avatar = forms.ImageField(required=False)
     user_description = RichTextFormField(required=False)
+    user_link = forms.URLField(required=False, label = 'Link to my personal web site')

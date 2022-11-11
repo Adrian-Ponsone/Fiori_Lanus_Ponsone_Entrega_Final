@@ -7,7 +7,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from accounts.forms import MyCreationForm, FormProfileEdit
 from accounts.models import UserExtension
 
-
 def login(request):
     
     if request.method == 'POST':
@@ -51,6 +50,7 @@ def edit_profile(request):
             request.user.email = new_data['email']
             request.user.userextension.avatar = new_data['avatar']
             request.user.userextension.user_description = new_data['user_description']
+            request.user.userextension.user_link = new_data['user_link']
             request.user.userextension.save()
             request.user.save()
             return redirect('profile')
@@ -60,10 +60,10 @@ def edit_profile(request):
                                         'last_name' : request.user.last_name,
                                         'email' : request.user.email,
                                         'avatar' : request.user.userextension.avatar,
-                                        'user_description' : request.user.userextension.user_description})
+                                        'user_description' : request.user.userextension.user_description,
+                                        'user_link' : request.user.userextension.user_link})
     
     return render(request, 'accounts/edit_profile.html', {'form' : form})
-
 
 class ChangePassword(LoginRequiredMixin, PasswordChangeView):
     template_name = 'accounts/change_password.html'
