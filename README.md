@@ -60,3 +60,5 @@ pass: 123456
 --------------------------------------------------------------------------------------------------------------
 
 by Agustín Fiori, Adrian Ponsone and Agustin Lanus
+
+explanatory video of the project in: https://drive.google.com/drive/folders/1LwKnaW1_noPlAs5uEZiZHUUGPJte9K87?usp=share_link
